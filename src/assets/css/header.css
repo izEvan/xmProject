@@ -1,0 +1,283 @@
+.navbar{
+  width: 100%;
+  background-color: #333333;
+  height: 40px;
+  font-size: 12px;
+  line-height: 40px;
+  text-align: center;
+}
+
+/* 导航样式 */
+.nav{
+  width: 1200px;
+  margin: 0 auto;
+}
+.nav .nav_left{
+  float: left;
+}
+.nav .nav_left ul li{
+  display: inline-flex;
+}
+.nav .nav_left ul li a{
+  color: #b0b0b0;
+}
+.nav .nav_left ul li span{
+  color: #424242;
+  margin: 0 5px;
+}
+.nav_left ul li a:hover{
+  color: #f5f5f5;
+}
+
+/* 登录注册+购物车样式 */
+
+.nav .nav_right{
+  float: right;
+}
+.nav .nav_right .enter{
+  float: left;
+  margin-right: 20px;
+}
+.nav .nav_right .enter ul li{
+  float: left;
+}
+.nav .nav_right .enter ul li a{
+  color: #b0b0b0;
+}
+.nav .nav_right .enter ul li span{
+  margin: 0 5px;
+  color: #424242;
+}
+.nav .nav_right .enter ul li a:hover{
+  color: #f5f5f5;
+}
+
+.nav_right .shop_car{
+  position: relative;
+  float: right;
+  width: 120px;
+  height: 40px;
+  font-size: 12px;
+  color: #b0b0b0;
+  background-color: #424242;
+}
+
+.nav_right .shop_car .cart i::before{
+  font-family: icomoon;
+  font-size: 14px;
+  content: '\e900';
+  vertical-align: baseline;
+  margin-right: 4px;
+}
+
+.nav_right .shop_car .cart:hover{
+  color: #ff6500;
+  cursor: pointer;
+}
+
+@keyframes dropdown {
+  0%{height: 0px;}
+  100%{height: 97px;}
+}
+
+.shop_car .cart_list{
+  display: none;
+  position: absolute;
+  top: 40px;
+  width: 316px;
+  height: 95px;
+  background-color: #fff;
+  box-shadow: 2px 4px 8px #b0b0b0;
+  animation: dropdown .1s linear;
+  z-index: 2;
+}
+.shop_car:hover{
+  background-color: #fff;
+}
+.shop_car:hover .cart_list{
+  display: block;
+}
+.shop_car .cart_list p{
+  line-height: 94px;
+}
+
+/* 商品导航 */
+.sub_navbar{
+  width: 1200px;
+  margin: 0 auto;
+  height: 88px;
+}
+
+/* logo */
+.sub_navbar .logo{
+  width: 56px;
+  height: 56px;
+  float: left;
+  margin: 16px 170px 16px 0;
+}
+.sub_navbar .logo a{
+  display: block;
+  width: 56px;
+  height: 56px;
+  background-image: url('../logo.png');
+  background-size: cover;
+}
+
+/* 中间导航 */
+.sub_navbar .sub_nav{
+  float: left;
+  height: 88px;
+  line-height: 88px;
+}
+
+.sub_nav>ul>li{
+  float: left;
+  margin: 0 10px;
+}
+.sub_nav>ul>li>span{
+  color: #000;
+  font-size: 16px;
+}
+.sub_nav>ul>li.active span{
+  color: #ff6500;
+  cursor: pointer;
+}
+
+.sub_nav>ul>li a{
+  color: #000;
+  font-size: 16px;
+}
+.sub_nav>ul>li:hover a{
+  color: #ff6500;
+}
+
+@keyframes dropDownList{
+  0%{height: 0;}
+  100%{height: 230px;}
+}
+
+.sub_navbar .pro_list{
+  width: 100%;
+  height: 230px;
+  border: 1px solid #ddd;
+  position: absolute;
+  top: 128px;
+  left: 0;
+  box-shadow: 2px 4px 8px #e0e0e0;
+  animation: dropDownList .1s linear;
+  z-index: 2;
+  background-color: #fff;
+}
+.pro_list .content{
+  width: 1200px;
+  height: 230px;
+  margin: 0 auto;
+}
+.pro_list .content ul{
+  width: 100%;
+  height: 210px;
+  margin: 10px 0;
+}
+
+.pro_list .content ul li{
+  float: left;
+  width: 230px;
+  height: 210px;
+} 
+.pro_list .content ul li a{
+  width: 100%;
+  height: 100%;
+}
+.pro_list .content ul li a div{
+  width: 100%;
+  height: 130px;
+  margin-top: 15px;
+  border-right: 1px solid #ddd;
+}
+.pro_list .content ul li a div img{
+  width: 100%;
+  height: 100%;
+}
+
+.pro_list .content ul li a span{
+  width: 50px;
+  display: block;
+  font-size: 12px;
+  margin: 3px auto;
+  color: #333333;
+  font-weight: bold;
+}
+.pro_list .content ul li a h5{
+  width: 55px;
+  margin: 0 auto;
+  color: #ff6500;
+}
+
+
+
+/* 搜索框 */
+.sub_navbar .search{
+  float: right;
+  height: 88px;
+  line-height: 88px;
+}
+.search input{
+  width: 250px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  padding-left: 5px;
+  font-size: 14px;
+}
+.search:hover input{
+  border: 1px solid #ff6500;
+}
+
+.search .btn_search{
+  float: right;
+  margin-top: 19px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  border-left: 0;
+  background-color: #fff;
+}
+.search .btn_search::after{
+  font-family: icomoon;
+  content: '\e986';
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.search .btn_search:hover {
+  background-color: #ff6500;
+  cursor: pointer;
+  color: #f5f5f5;
+}
+.search:hover .btn_search{
+  border: 1px solid #ff6500;
+  border-left: 0;
+}
+.search .search_list{
+  width: 250px;
+  height: 250px;
+  border: 1px solid #ff6500;
+  position: relative;
+  top: -20px;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.search_list ul li{
+  padding-left: 5px;
+  line-height: 30px;
+}
+.search_list ul li:hover{
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+.search_list ul li a{
+  display: block;
+  width: 100%;
+  color: #424242;
+  font-size: 12px;
+}
