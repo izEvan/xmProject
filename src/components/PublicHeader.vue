@@ -61,6 +61,7 @@
       <div class="logo">
         <router-link title="小米官网" to="/"></router-link>
       </div>
+
       <div class="sub_nav">
         <ul>
           <li @mouseover="showList = 0" :class="{ active: showList == 0 }">

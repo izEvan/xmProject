@@ -1,53 +1,95 @@
 <template>
   <div class="index-carousel">
-    <div class="carousel_bx">
-      <swiper
-        ref="mySwiper"
-        @mouseover.native="stopSwiper"
-        @mouseleave.native="startSwiper"
-        :options="swiperOption"
-      >
-        <swiper-slide>
-          <img src="/image/lunbo/lbt1.webp" alt="" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="/image/lunbo/lbt2.webp" alt="" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="/image/lunbo/lbt3.webp" alt="" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="/image/lunbo/lbt4.webp" alt="" />
-        </swiper-slide>
-        <!-- 小圆点 -->
-        <div class="swiper-pagination" slot="pagination"></div>
-        <!-- 上下页 -->
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
-      </swiper>
-      <div class="carousel_nav">
-        <div class="carousel_navbx">
-          <ul>
-            <li
-              @mouseover="showSearchList = i"
-              @mouseleave="showSearchList = null"
-              v-for="(item, i) in searchList"
-              :key="i"
-            >
-              <router-link :to="item.href">{{ item.title }}</router-link>
-              <div v-show="showSearchList == i" class="nav_list">
-                <ul>
-                  <li v-for="l in 24" :key="l">
-                    <router-link to="/login">
-                      <img src="/image/list/tv5.webp" alt="" />
-                      <span>{{ item.option.cs }}</span>
-                    </router-link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
+    <!-- 轮播图 -->
+    <swiper
+      ref="mySwiper"
+      @mouseover.native="stopSwiper"
+      @mouseleave.native="startSwiper"
+      :options="swiperOption"
+    >
+      <swiper-slide>
+        <img src="/image/lunbo/lbt1.webp" alt="" />
+      </swiper-slide>
+      <swiper-slide>
+        <img src="/image/lunbo/lbt2.webp" alt="" />
+      </swiper-slide>
+      <swiper-slide>
+        <img src="/image/lunbo/lbt3.webp" alt="" />
+      </swiper-slide>
+      <swiper-slide>
+        <img src="/image/lunbo/lbt4.webp" alt="" />
+      </swiper-slide>
+      <!-- 小圆点 -->
+      <div class="swiper-pagination" slot="pagination"></div>
+      <!-- 上下页 -->
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
+    </swiper>
+    <!-- 导航 -->
+    <div class="carousel_navbx">
+      <ul>
+        <li
+          @mouseover="showSearchList = i"
+          @mouseleave="showSearchList = null"
+          v-for="(item, i) in searchList"
+          :key="i"
+        >
+          <router-link :to="item.href">{{ item.title }}</router-link>
+          <div v-show="showSearchList == i" class="nav_list">
+            <ul>
+              <li v-for="l in 24" :key="l">
+                <router-link to="/login">
+                  <img src="/image/list/tv5.webp" alt="" />
+                  <span>{{ item.option.cs }}</span>
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- 推荐 -->
+    <div class="recommend">
+      <div class="recom_left">
+        <ul>
+          <li>
+            <router-link to="/login" class="bz">保障服务</router-link>
+          </li>
+          <li>
+            <router-link to="/" class="enterprise">企业团购</router-link>
+          </li>
+          <li>
+            <router-link to="/" class="fma">F码通道</router-link>
+          </li>
+          <li>
+            <router-link to="/" class="mfk">米粉卡</router-link>
+          </li>
+          <li>
+            <router-link to="/" class="newtold">以旧换新</router-link>
+          </li>
+          <li>
+            <router-link to="/" class="bill">话费充值</router-link>
+          </li>
+        </ul>
+      </div>
+      <div class="recom_right">
+        <ul>
+          <li>
+            <router-link to="/login">
+              <img src="/image/lunbo/tj1.jpg" alt="" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/">
+              <img src="/image/lunbo/tj2.jpg" alt="" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/">
+              <img src="/image/lunbo/tj3.jpg" alt="" />
+            </router-link>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
